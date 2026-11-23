@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F6F8">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="noindex, nofollow">
+<title>적바림</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<style>
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  min-height: 100vh; background: #F5F6F8; color: #1B1F24;
+  font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', system-ui, sans-serif;
+  font-size: 15px; line-height: 1.5; -webkit-text-size-adjust: 100%;
+}
+.sh { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px 20px calc(24px + env(safe-area-inset-bottom)); }
+.sh-card { width: 100%; max-width: 420px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.sh-card img { width: 64px; height: 64px; border-radius: 16px; }
+.sh-card h1 { margin: 6px 0 0; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+#jb-status { margin: 0; color: #5F6873; font-size: 14px; min-height: 21px; }
+#jb-status.wait::after { content: ''; display: inline-block; width: 12px; height: 12px; margin-left: 6px; vertical-align: -1px; border: 2px solid #DCE3F5; border-top-color: #2448B8; border-radius: 50%; animation: jbspin .8s linear infinite; }
+@keyframes jbspin { to { transform: rotate(360deg); } }
+#jb-body:empty { display: none; }
+#jb-body { width: 100%; margin-top: 8px; text-align: left; background: #FFFFFF; border: 1px solid #E6E8EC; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+#jb-body p { margin: 0; color: #3A414A; }
+#jb-body ol { margin: 0; padding-left: 20px; color: #3A414A; display: flex; flex-direction: column; gap: 4px; }
+#jb-body label { font-size: 13px; color: #5F6873; display: flex; flex-direction: column; gap: 6px; }
+#jb-body input { font: inherit; width: 100%; min-height: 46px; padding: 10px 12px; border: 1px solid #E6E8EC; border-radius: 12px; background: #FFFFFF; color: #1B1F24; }
+#jb-body input:focus { outline: 2px solid #2448B8; outline-offset: 1px; }
+#jb-body button { font: inherit; min-height: 46px; border-radius: 12px; border: 0; background: #2448B8; color: #FFFFFF; font-weight: 700; cursor: pointer; }
+#jb-body .err { color: #B42318; font-size: 13px; }
+#jb-body .sub { font-size: 13px; color: #5F6873; }
+#jb-body details summary { cursor: pointer; color: #2448B8; font-size: 14px; }
+#jb-body details[open] summary { margin-bottom: 8px; }
+#jb-body details > div { display: flex; flex-direction: column; gap: 8px; }
+</style>
+</head>
+<body>
+<main class="sh">
+  <div class="sh-card">
+    <img src="icons/icon-192.png" alt="" width="64" height="64">
+    <h1>적바림</h1>
+    <p id="jb-status" class="wait" role="status" aria-live="polite">여는 중</p>
+    <div id="jb-body"></div>
+  </div>
+</main>
+<noscript><p style="text-align:center">적바림은 자바스크립트를 켜야 열려요.</p></noscript>
+<script src="shell.js"></script>
+</body>
+</html>

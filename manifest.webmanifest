@@ -1,0 +1,38 @@
+{
+  "name": "적바림",
+  "short_name": "적바림",
+  "description": "일·할 일·지출·문서를 적고 모아 보는 개인 업무 기록 앱",
+  "lang": "ko",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F5F6F8",
+  "theme_color": "#F5F6F8",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "share_target": {
+    "action": "./share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [{ "name": "files", "accept": ["image/*", "image/jpeg", "image/png", "application/pdf", ".jpg", ".jpeg", ".png", ".pdf"] }]
+    }
+  },
+  "shortcuts": [
+    { "name": "지출 적기", "short_name": "지출", "description": "지출 기록 창을 바로 열어요", "url": "./?add=spend",
+      "icons": [{ "src": "icons/sc-spend.png", "sizes": "96x96", "type": "image/png" }] },
+    { "name": "할 일 적기", "short_name": "할 일", "description": "할 일 창을 바로 열어요", "url": "./?add=todo",
+      "icons": [{ "src": "icons/sc-todo.png", "sizes": "96x96", "type": "image/png" }] },
+    { "name": "메모 적기", "short_name": "메모", "description": "메모 기록 창을 바로 열어요", "url": "./?add=memo",
+      "icons": [{ "src": "icons/sc-memo.png", "sizes": "96x96", "type": "image/png" }] },
+    { "name": "한눈에 보기", "short_name": "한눈에", "description": "목록 탭의 한눈에 보기를 열어요", "url": "./?go=list",
+      "icons": [{ "src": "icons/sc-glance.png", "sizes": "96x96", "type": "image/png" }] }
+  ]
+}
